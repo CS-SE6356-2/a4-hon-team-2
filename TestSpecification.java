@@ -3,7 +3,7 @@ import static org.junit.Assert.fail;
 
 import org.junit.Test;
 
-public class TestProductNotFoundException {
+public class TestSpecification {
 
 	@Test
 	public void testRemove() {
@@ -23,6 +23,10 @@ public class TestProductNotFoundException {
 		if(s.getBalance() != bal+orange.getPrice())
 			fail();
 		
+		// When an item is removed, the number of items must be decreased
+		size = s.getItemCount();
+		try { s.removeItem(orange); } catch(ProductNotFoundException ex) { }
+		assertEquals(s.getItemCount(), size-1);
 		
 		// When a product not in the cart is removed, a ProductNotFoundException must be thrown
 		try {
