@@ -11,11 +11,11 @@ public class TestSpecification {
 		Product p = new Product("Banana", 2.99);
 		
 		//when a cart is created , the number of item is zero
-		int size1=s.getItemCount();
-		assertEquals(siz1,0);
+		int size = s.getItemCount();
+		assertEquals(size,0);
 		
 		// When a new product is added, the number of items must be incremented
-		int size = s.getItemCount();
+		size = s.getItemCount();
 		Product apple = new Product("Apple", 1.99);
 		s.addItem(apple);
 		assertEquals(s.getItemCount(), size+1);
