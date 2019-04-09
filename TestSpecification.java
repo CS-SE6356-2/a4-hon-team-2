@@ -14,6 +14,13 @@ public class TestSpecification {
 		int size1=s.getItemCount();
 		assertEquals(siz1,0);
 		
+		//When a shopping cart is empty then the number of items is zero
+		Product honey = new Product("honey", 1.99);
+		s.addItem(honey);
+		s.removeItem(honey);
+		size1=s.getItemCount();
+		assertEquals(size1,0);
+		
 		// When a new product is added, the number of items must be incremented
 		int size = s.getItemCount();
 		Product apple = new Product("Apple", 1.99);
