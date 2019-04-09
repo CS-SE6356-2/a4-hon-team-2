@@ -17,9 +17,9 @@ public class TestSpecification {
 		//When a shopping cart is empty then the number of items is zero
 		Product honey = new Product("honey", 1.99);
 		s.addItem(honey);
-		s.removeItem(honey);
-		size1=s.getItemCount();
-		assertEquals(size1,0);
+		s.empty();
+		size = s.getItemCount();
+		assertEquals(size,0);
 		
 		// When a new product is added, the number of items must be incremented
 		size = s.getItemCount();
